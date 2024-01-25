@@ -44,6 +44,6 @@ Step-by-step guide on installing and configuring your project.
 
 ```bash
 # Example installation commands
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/tarunshar/app-using-nextjs.git
 cd your-repo
 yarn
