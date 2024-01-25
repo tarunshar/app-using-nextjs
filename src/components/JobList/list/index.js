@@ -17,8 +17,6 @@ const ProductListing = ({
   setViewType,
   setFilterData,
   setList,
-  setTotal,
-  setThumbnailUrls,
   page,
   setPage,
   total,
@@ -28,49 +26,7 @@ const ProductListing = ({
   prevPage,
   isLoading
 }) => {
-  const searchCourseData = async searchQuery => {
-    try {
-      const response = await axios.get(`/kms/courses/by-everything`, {
-        headers: {
-          Authorization: `Bearer ${sessionStorage.getItem('jwt_token')}`,
-          keyword: searchQuery,
-          tags: null
-        }
-      })
-      setList(response?.data)
-      const thumbnails = response?.data?.map(course => course.courseThumbnail).filter(Boolean)
-
-      const urlPromises = thumbnails?.map(async thumbnail => {
-        try {
-          const responsethumbnail = await axios.get(`/kms/courses/file/${thumbnail}?fileType=thumbnail`, {
-            headers: {
-              Authorization: `Bearer ${sessionStorage.getItem('jwt_token')}`
-            },
-            responseType: 'arraybuffer'
-          })
-
-          const blob = new Blob([responsethumbnail.data], {
-            type: 'image/jpeg'
-          })
-          const dataUrl = URL.createObjectURL(blob)
-
-          return { [thumbnail]: dataUrl }
-        } catch (err) {
-          console.log(err)
-        }
-      })
-
-      const urls = await Promise.all(urlPromises)
-
-      const mergedUrls = Object.assign({}, ...urls.filter(Boolean))
-      console.log(mergedUrls, 'mergedUrls')
-
-      // Set the obtained URLs
-      setThumbnailUrls(mergedUrls)
-    } catch (err) {
-      console.log(err)
-    }
-  }
+  const searchCourseData = async searchQuery => {}
 
   const onPageChange = (event, value) => {
     setPage(value)

@@ -70,7 +70,7 @@ import { getUserDetailsAction, resetgetUserDetailsAction } from 'src/redux/featu
 import { parseString } from 'xml2js'
 import axios from 'axios'
 import { borderBottom } from '@mui/system'
-import bg1 from '../../assets/bg1.jpg'
+import Login from '../../assets/login.png'
 
 // ** Styled Components
 const LoginIllustration = styled('img')(({ theme }) => ({
@@ -196,25 +196,9 @@ const LoginPage = () => {
     }
   }, [dispatch, isSuccess, isError, isErrorLogin, isSuccessLogin])
 
-  function encryptFun(password, username) {
-    var keybefore = username + 'appolocomputers'
-    var ivbefore = username + 'costacloud012014'
-    var key = CryptoJS.enc.Latin1.parse(keybefore.substring(0, 16))
-    var iv = CryptoJS.enc.Latin1.parse(ivbefore.substring(0, 16))
-
-    var ciphertext = CryptoJS.AES.encrypt(password, key, {
-      iv: iv,
-      mode: CryptoJS.mode.CBC,
-      padding: CryptoJS.pad.ZeroPadding
-    }).toString()
-
-    return ciphertext
-  }
-
   const onSubmit = e => {
     e.preventDefault()
 
-    //  console.log('encrypted', encryptFun(password, username))
     const formData = new FormData()
     formData.append('username', username)
     formData.append('password', password)
@@ -254,30 +238,6 @@ const LoginPage = () => {
       })
     })
   }
-
-  const fetchData = async () => {
-    setIsRssLoading(true)
-    try {
-      const data = await fetchRSSFeed()
-      console.log(data)
-      setRssData(data)
-      setRssIsSuccess(true)
-      setRssIsError(false)
-      setRssError('')
-    } catch (error) {
-      console.log(error)
-      setRssIsError(true)
-      setRssError(error?.response?.data?.message)
-      setRssIsSuccess(false)
-      setRssData([])
-    } finally {
-      setIsRssLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
 
   return (
     <Box className='content-right'>

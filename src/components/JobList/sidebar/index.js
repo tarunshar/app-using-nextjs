@@ -70,20 +70,7 @@ const ProductSidebar = ({ filterData, setFilterData, setList, setTotal }) => {
         >
           Filter By
         </Box>
-        {/* <Box
-          sx={{
-            color: 'text.secondary',
-            mb: 4
-          }}
-        >
-          SORT
-        </Box>
-        <JobFilter onFilterChange={handleFilterChange} />
-        <Divider
-          sx={{
-            mt: 4
-          }}
-        /> */}
+
         <Box
           sx={{
             color: 'text.secondary',
@@ -118,117 +105,14 @@ const ProductSidebar = ({ filterData, setFilterData, setList, setTotal }) => {
             my: 4
           }}
         >
-          TAGS
+          JOB LIST
           <AppList
             data={brandData}
             renderRow={data => (
-              <CheckedCell key={data.id} data={data} onChange={() => onSelectBrand(data)} selected={selectedBrand} />
+              <CheckedCell key={data.id} data={data} onChange={() => console.log('data')} selected={selectedBrand} />
             )}
           />
         </Box>
-        {/* <Divider
-          sx={{
-            mt: 4,
-          }}
-        /> */}
-        {/* <Box
-          sx={{
-            color: 'text.secondary',
-            my: 4,
-            fontWeight: Fonts.MEDIUM,
-          }}
-        >
-          IDEAL FOR
-          <AppList
-            data={idealFor}
-            renderRow={(data) => (
-              <CheckedCell
-                key={data.id}
-                data={data}
-                onChange={onSelectFor}
-                selected={selectedFor}
-              />
-            )}
-          />
-        </Box> */}
-        {/* <Divider
-          sx={{
-            mt: 4,
-          }}
-        /> */}
-        {/* <Box
-          sx={{
-            color: 'text.secondary',
-            my: 4,
-            fontWeight: Fonts.MEDIUM,
-          }}
-        >
-          DISCOUNT
-          <AppList
-            data={discountList}
-            renderRow={(data) => (
-              <CheckedCell
-                key={data.id}
-                data={data}
-                onChange={onSelectDiscount}
-                selected={selectedDiscount}
-              />
-            )}
-          />
-        </Box>
-        <Divider
-          sx={{
-            mt: 4,
-          }}
-        /> */}
-        {/* <Box
-          sx={{
-            color: 'text.secondary',
-            my: 4,
-            fontWeight: Fonts.MEDIUM,
-          }}
-        >
-          <Box sx={{mb: 3}}>COLOR</Box>
-
-          <AppGrid
-            data={Object.values(ProductColors)}
-            column={6}
-            itemPadding={10}
-            renderRow={(data, index) => (
-              <ColorCell
-                key={'color-' + index}
-                data={data}
-                selected={selectedColor}
-                onChange={onSelectColor}
-              />
-            )}
-          />
-        </Box> */}
-        {/* <Divider
-          sx={{
-            mt: 4,
-          }}
-        /> */}
-        {/* <Box
-          sx={{
-            color: 'text.secondary',
-            my: 4,
-            fontWeight: Fonts.MEDIUM,
-          }}
-        >
-          CUSTOMER RATINGS
-          <AppList
-            data={[5, 4, 3, 2, 1]}
-            renderRow={(data) => (
-              <RatingCell
-                key={data}
-                data={data}
-                onChange={onSelectRating}
-                selected={customerRating}
-              />
-            )}
-          />
-        </Box> */}
       </Box>
     </AppScrollbar>
   )

@@ -53,10 +53,6 @@ const ListItem = props => {
             width: { sm: '8rem', xl: '10rem' }
           }}
         >
-          {/* <MediaSlider>
-            <Slider {...settings}>
-              {item.image.map((img) => {
-                return ( */}
           <Box
             sx={{
               mb: 2,
@@ -69,7 +65,6 @@ const ListItem = props => {
                 maxWidth: '100%'
               }
             }}
-            // key={img.id}
           >
             <Box
               sx={{
@@ -78,14 +73,9 @@ const ListItem = props => {
                 height: '100%'
               }}
             >
-              {/* <img src={img.src} alt='watch' /> */}
               <img src={imageUrls[getRandomIndex()]} alt='job' />
             </Box>
           </Box>
-          {/* );
-              })} */}
-          {/* </Slider> */}
-          {/* </MediaSlider> */}
         </Box>
 
         <Box
@@ -185,14 +175,11 @@ const ListItem = props => {
 
                   textTransform: 'uppercase'
                 }}
-              >
-                {/* Job Type */}
-              </Box>
+              ></Box>
               <Box
                 component='span'
                 sx={{
                   ml: 2
-                  // fontWeight: Fonts.MEDIUM
                 }}
               >
                 {item.job_type || 'no content'}
@@ -220,61 +207,6 @@ const ListItem = props => {
               {item.exp_required || 'no'} experience
             </Box>
           </Box>
-
-          {/* <Box
-            sx={{
-              mt: 'auto',
-              mb: -3,
-              mx: {xs: -2, xl: -3},
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            <Box
-              sx={{
-                px: {xs: 2, xl: 3},
-                mb: 2,
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <Box
-                sx={{
-                  mr: 1,
-                }}
-              >
-                <AddShoppingCartOutlinedIcon sx={{fontSize: 16, mt: 1}} />
-              </Box>
-              <Box
-                component='span'
-                sx={{
-                  fontSize: 14,
-                }}
-              >
-                <IntlMessages id='ecommerce.addToCart' />
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                px: {xs: 2, xl: 3},
-                mb: 2,
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <Box sx={{mt: 1.5}}>
-                <Rating size='small' value={item.rating} readOnly />
-                <Rating size='small' value={'5'} readOnly />
-              </Box>
-              <Box
-                sx={{
-                  ml: 2,
-                }}
-              >{`(${item.reviews})`}</Box>
-            </Box>
-          </Box> */}
         </Box>
       </Box>
     </Card>
