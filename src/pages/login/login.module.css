@@ -1,0 +1,27 @@
+/* Customize the scrollbar in WebKit browsers (Chrome, Safari) */
+.SidebarParent::-webkit-scrollbar {
+  width: 3px; /* Set the width of the scrollbar */
+}
+
+.SidebarParent::-webkit-scrollbar-thumb {
+  background-color: #7367f0; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Set the border radius of the scrollbar thumb */
+}
+
+.SidebarParent::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Set the color of the scrollbar track */
+}
+
+/* Customize the scrollbar in other browsers */
+.SidebarParent {
+  scrollbar-width: thin; /* Set the width of the scrollbar */
+}
+
+.SidebarParent::-webkit-scrollbar-thumb {
+  background-color: #7367f0; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Set the border radius of the scrollbar thumb */
+}
+
+.SidebarParent::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Set the color of the scrollbar track */
+}
