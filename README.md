@@ -1,6 +1,6 @@
 # Project Title
 
-Short description of your project.
+This project consist of login register and a joblist page . The technology used for this project is nextjs and for the state management redux toolkit is used 
 
 ## Table of Contents
 
