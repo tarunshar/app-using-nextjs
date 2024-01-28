@@ -10,25 +10,7 @@ import CheckedCell from '../sidebarcontent/checkedcell'
 import ProductsCategory from '../sidebarcontent/productcategory'
 import JobFilter from '../sidebarcontent/filterbynewestoldest'
 
-const ProductSidebar = ({ filterData, setFilterData, setList, setTotal }) => {
-  const [selectedBrand, setSelectedBrand] = useState(filterData.brand)
-  const [selectedFor, setSelectedFor] = useState(filterData.ideaFor)
-  const [selectedDiscount, setSelectedDiscount] = useState(filterData.discount)
-  const [selectedColor, setSelectedColor] = useState(filterData.color)
-  const [customerRating, setCustomerRating] = useState(filterData.rating)
-  const [filter, setFilter] = useState('newest')
-
-  useEffect(() => {
-    setFilterData({
-      title: filterData.title,
-      brand: selectedBrand,
-      ideaFor: selectedFor,
-      discount: selectedDiscount,
-      color: selectedColor,
-      rating: customerRating
-    })
-  }, [filterData.title, selectedBrand, selectedFor, selectedDiscount, selectedColor, customerRating])
-
+const ProductSidebar = ({}) => {
   const handleFilterChange = newFilter => {
     setFilter(newFilter)
     // Perform the sorting logic based on the selected filter
@@ -106,12 +88,7 @@ const ProductSidebar = ({ filterData, setFilterData, setList, setTotal }) => {
           }}
         >
           JOB LIST
-          <AppList
-            data={brandData}
-            renderRow={data => (
-              <CheckedCell key={data.id} data={data} onChange={() => console.log('data')} selected={selectedBrand} />
-            )}
-          />
+          <AppList data={brandData} renderRow={data => <CheckedCell key={data.id} data={data} />} />
         </Box>
       </Box>
     </AppScrollbar>
@@ -119,9 +96,4 @@ const ProductSidebar = ({ filterData, setFilterData, setList, setTotal }) => {
 }
 
 export default ProductSidebar
-ProductSidebar.propTypes = {
-  filterData: PropTypes.object.isRequired,
-  setFilterData: PropTypes.func.isRequired,
-  setList: PropTypes.any,
-  setTotal: PropTypes.any
-}
+ProductSidebar.propTypes = {}

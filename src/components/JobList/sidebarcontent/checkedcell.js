@@ -12,10 +12,10 @@ const CheckedCell = ({ selected, data, onChange }) => {
         alignItems: 'center',
         cursor: 'pointer'
       }}
-      onClick={() => onChange(data.id)}
+      // onClick={() => onChange(data.id)}
     >
       <Checkbox
-        checked={selected.some(item => item === data.id)}
+        // checked={selected.some(item => item === data.id)}
         color='primary'
         inputProps={{ 'aria-label': 'secondary checkbox' }}
       />

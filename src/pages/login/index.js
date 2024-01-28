@@ -66,7 +66,6 @@ import {
   resetRefreshction
 } from 'src/redux/features/authSlice'
 import Image from 'next/image'
-import { getUserDetailsAction, resetgetUserDetailsAction } from 'src/redux/features/userSlice'
 import { parseString } from 'xml2js'
 import axios from 'axios'
 import { borderBottom } from '@mui/system'
@@ -169,7 +168,6 @@ const LoginPage = () => {
     localStorage.clear()
     dispatch(resetRefreshction())
     dispatch(resetCheckTokenValidtyAction())
-    dispatch(resetgetUserDetailsAction())
   }, [])
 
   useEffect(() => {

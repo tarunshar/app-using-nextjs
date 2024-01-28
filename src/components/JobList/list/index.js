@@ -11,33 +11,11 @@ import AppsContent from 'src/components/AppsContainer/AppsContent'
 import AppsHeader from 'src/components/AppsContainer/AppsHeader'
 import AppsFooter from 'src/components/AppsContainer/AppsFooter'
 
-const ProductListing = ({
-  filterData,
-  viewType,
-  setViewType,
-  setFilterData,
-  setList,
-  page,
-  setPage,
-  total,
-  list,
-  thumbnailUrls,
-  nextPage,
-  prevPage,
-  isLoading
-}) => {
+const ProductListing = ({ viewType, setViewType, list, setList, nextPage, prevPage, isLoading }) => {
   const searchCourseData = async searchQuery => {}
 
   const onPageChange = (event, value) => {
     setPage(value)
-  }
-
-  const searchProduct = title => {
-    setFilterData({ ...filterData, title })
-  }
-
-  const SearchcoursesData = title => {
-    setList(title)
   }
 
   return (
@@ -46,13 +24,10 @@ const ProductListing = ({
         <ProductHeader
           list={list}
           viewType={viewType}
-          page={page}
-          totalProducts={total}
-          onPageChange={onPageChange}
-          onSearch={searchCourseData}
           setViewType={setViewType}
           nextPage={nextPage}
           prevPage={prevPage}
+          setList={setList}
         />
       </AppsHeader>
 
@@ -71,16 +46,16 @@ const ProductListing = ({
           }}
         >
           {viewType === VIEW_TYPE.GRID ? (
-            <ProductGrid ecommerceList={list} thumbnailUrls={thumbnailUrls} loading={isLoading} />
+            <ProductGrid ecommerceList={list} loading={isLoading} />
           ) : (
-            <ProductList ecommerceList={list} thumbnailUrls={thumbnailUrls} loading={isLoading} />
+            <ProductList ecommerceList={list} loading={isLoading} />
           )}
         </Box>
       </AppsContent>
       <Hidden smUp>
         {list?.length > 0 ? (
           <AppsFooter>
-            <AppsPagination count={total} rowsPerPage={10} page={page} onPageChange={onPageChange} />
+            <AppsPagination />
           </AppsFooter>
         ) : null}
       </Hidden>
@@ -90,19 +65,11 @@ const ProductListing = ({
 
 export default ProductListing
 ProductListing.propTypes = {
-  filterData: PropTypes.object,
   viewType: PropTypes.string,
   setViewType: PropTypes.func,
-  setFilterData: PropTypes.func,
-  setList: PropTypes.any,
-  setTotal: PropTypes.any,
-  setThumbnailUrls: PropTypes.any,
-  setPage: PropTypes.any,
-  total: PropTypes.any,
   list: PropTypes.any,
-  thumbnailUrls: PropTypes.any,
-  page: PropTypes.any,
   nextPage: PropTypes.any,
   prevPage: PropTypes.any,
-  isLoading: PropTypes.any
+  isLoading: PropTypes.any,
+  setList: PropTypes.any
 }

@@ -56,34 +56,15 @@ const Products = () => {
   }
 
   return (
-    <AppsContainer
-      title={'JOB LIST'}
-      sidebarContent={
-        <ProductsSidebar
-          filterData={filterData}
-          setFilterData={setFilterData}
-          setList={setList}
-          list={list.results}
-          setTotal={setTotal}
-        />
-      }
-    >
+    <AppsContainer title={'JOB LIST'} sidebarContent={<ProductsSidebar />}>
       <ProductListing
-        filterData={filterData}
         viewType={viewType}
         setViewType={setViewType}
-        setFilterData={setFilterData}
-        setList={setList}
-        setThumbnailUrls={setThumbnailUrls}
-        setTotal={setTotal}
-        setPage={setPage}
-        page={page}
-        total={total}
         list={data.results}
-        thumbnailUrls={thumbnailUrls}
         nextPage={nextPage}
         prevPage={prevPage}
         isLoading={isLoading}
+        setList={setList}
       />
     </AppsContainer>
   )
