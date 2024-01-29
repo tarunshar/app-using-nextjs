@@ -1,55 +1,55 @@
-import React from 'react'
-import { Box, Tooltip } from '@mui/material'
+import React from "react";
+import { Box, Tooltip } from "@mui/material";
 
-export const getStringFromHtml = htmlContent => {
+export const getStringFromHtml = (htmlContent) => {
   if (htmlContent === null || htmlContent === undefined) {
-    return ''
+    return "";
   }
 
-  return htmlContent.replace(/(<([^>]+)>)/gi, '')
-}
+  return htmlContent.replace(/(<([^>]+)>)/gi, "");
+};
 
 export const generateUniqueID = () => {
-  return `v1-${Date.now()}-${Math.floor(Math.random() * (9e12 - 1)) + 1e12}`
-}
+  return `v1-${Date.now()}-${Math.floor(Math.random() * (9e12 - 1)) + 1e12}`;
+};
 
-export const ellipsisLines = (content, placement = 'top') => {
+export const ellipsisLines = (content, placement = "top") => {
   if (content) {
     return (
       <Tooltip placement={placement} title={content}>
         <Box
           style={{
-            display: 'block',
-            width: '100%',
+            display: "block",
+            width: "100%",
             maxWidth: 250,
-            textOverflow: 'ellipsis',
-            overflow: 'hidden',
-            whiteSpace: 'nowrap'
+            textOverflow: "ellipsis",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
           }}
         >
           {content}
-          {content.length > 40 && '...'}
+          {content.length > 40 && "..."}
         </Box>
       </Tooltip>
-    )
+    );
   } else {
-    return handleNullValue(content)
+    return handleNullValue(content);
   }
-}
+};
 
-export const handleNullValue = value => {
+export const handleNullValue = (value) => {
   if (value === null) {
-    return '-'
+    return "-";
   } else {
-    return value
+    return value;
   }
-}
+};
 
 export const formatCurrency = (value, currencyFormat, decimalDigits) => {
-  return new Intl.NumberFormat(currencyFormat?.language || 'en-IN', {
-    style: 'currency',
-    currency: currencyFormat?.currency || 'INR',
+  return new Intl.NumberFormat(currencyFormat?.language || "en-IN", {
+    style: "currency",
+    currency: currencyFormat?.currency || "INR",
     minimumFractionDigits: decimalDigits,
-    maximumFractionDigits: decimalDigits
-  }).format(value)
-}
+    maximumFractionDigits: decimalDigits,
+  }).format(value);
+};
