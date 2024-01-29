@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import { getStringFromHtml } from "src/components/Helper";
+import { getStringFromHtml } from "./string";
 
 const GridItem = (props) => {
   const { item, thumbnailUrls } = props;

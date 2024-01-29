@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
 import { green, grey } from "@mui/material/colors";
-import { getStringFromHtml } from "src/components/Helper";
+import { getStringFromHtml } from "./string";
 
 const settings = {
   dots: true,
