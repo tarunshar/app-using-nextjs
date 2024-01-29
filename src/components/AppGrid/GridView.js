@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Box, useTheme } from "@mui/material";
-import { useWidth } from "../Files/common";
+import { useWidth } from "../Files";
 
 const getEmptyContainer = (ListEmptyComponent) => {
   if (ListEmptyComponent)
