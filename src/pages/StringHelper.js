@@ -3,7 +3,7 @@ import { Box, Tooltip } from '@mui/material'
 
 export const getStringFromHtml = htmlContent => {
   if (htmlContent === null || htmlContent === undefined) {
-    return '' // or handle it in a way that makes sense for your use case
+    return ''
   }
 
   return htmlContent.replace(/(<([^>]+)>)/gi, '')
