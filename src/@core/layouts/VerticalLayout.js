@@ -24,7 +24,6 @@ import backgroundImage from '../../assets/Background.jpg'
 const VerticalLayoutWrapper = styled('div')({
   height: '100%',
   display: 'flex',
-  // backgroundImage: `url(${backgroundImage?.src})`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   backgroundSize: 'cover'

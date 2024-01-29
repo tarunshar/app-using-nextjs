@@ -13,9 +13,6 @@ import JobFilter from '../sidebarcontent/filterbynewestoldest'
 const ProductSidebar = ({}) => {
   const handleFilterChange = newFilter => {
     setFilter(newFilter)
-    // Perform the sorting logic based on the selected filter
-    // You might want to update your data based on the filter
-    // Example: dispatch(jobSortAction(newFilter));
   }
 
   const brandData = [

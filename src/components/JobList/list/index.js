@@ -64,6 +64,7 @@ const ProductListing = ({ viewType, setViewType, list, setList, nextPage, prevPa
 }
 
 export default ProductListing
+
 ProductListing.propTypes = {
   viewType: PropTypes.string,
   setViewType: PropTypes.func,

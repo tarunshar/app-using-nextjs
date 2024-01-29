@@ -26,8 +26,9 @@ const imageUrls = [
 ]
 
 const getRandomIndex = () => Math.floor(Math.random() * imageUrls.length)
+
 const ListItem = props => {
-  const { item, thumbnailUrls } = props
+  const { item } = props
 
   return (
     <Card
@@ -216,6 +217,5 @@ const ListItem = props => {
 export default ListItem
 
 ListItem.propTypes = {
-  item: PropTypes.object.isRequired,
-  thumbnailUrls: PropTypes.object
+  item: PropTypes.object.isRequired
 }

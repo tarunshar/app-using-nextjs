@@ -18,6 +18,7 @@ const ProductGrid = ({ ecommerceList, loading, thumbnailUrls }) => (
     ListEmptyComponent={<ListEmptyResult content='No product found' loading={loading} />}
   />
 )
+
 export default ProductGrid
 
 ProductGrid.propTypes = {

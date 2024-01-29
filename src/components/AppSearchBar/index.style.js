@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, inputBaseClasses, lighten } from '@mui/material'
-// import { Fonts } from '@crema/constants/AppEnums'
 import { styled } from '@mui/material/styles'
 import InputBase from '@mui/material/InputBase'
 import PropTypes from 'prop-types'
@@ -22,14 +21,13 @@ export const SearchWrapper = ({ iconPosition, children }) => {
     </Box>
   )
 }
+
 SearchWrapper.propTypes = {
   iconPosition: PropTypes.string,
   children: PropTypes.node
 }
 
 export const SearchInputBase = styled(InputBase)(({ theme }) => ({
-  // fontWeight: Fonts.MEDIUM,
-
   [`& .${inputBaseClasses.root}`]: {
     color: 'inherit',
     width: '100%'

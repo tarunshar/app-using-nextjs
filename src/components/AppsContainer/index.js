@@ -6,16 +6,10 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import PropTypes from 'prop-types'
 import Card from '@mui/material/Card'
-
 import AppSidebar from './AppSidebar'
-// import { useLayoutContext } from '@crema/context/AppContextProvider/LayoutContextProvider'
-// import { Fonts } from '@crema/constants/AppEnums'
 import AppContainerWrapper from './AppContainerWrapper'
-// import { useLocation } from 'react-router-dom'
 
 const AppsContainer = props => {
-  // const { pathname } = useLocation()
-  // const { footer } = useLayoutContext()
   const [isNavCollapsed, setNavCollapsed] = useState(false)
   const navStyle = ''
   const footer = ''

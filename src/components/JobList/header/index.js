@@ -25,6 +25,7 @@ const IconBtn = styled(IconButton)(({ theme }) => {
     }
   }
 })
+
 const ProductHeader = ({
   onSearch,
   viewType,
@@ -36,7 +37,6 @@ const ProductHeader = ({
   nextPage,
   prevPage
 }) => {
-  console.log(list, 'list')
   return (
     <Box
       sx={{

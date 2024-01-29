@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Box, useTheme } from '@mui/material'
 import { useWidth } from 'src/pages/Common'
-// import AppAnimateGroup from '../AppAnimateGroup';
-// import { useWidth } from '@crema/helpers/Common'
 
 const getEmptyContainer = ListEmptyComponent => {
   if (ListEmptyComponent) return React.isValidElement(ListEmptyComponent) ? ListEmptyComponent : <ListEmptyComponent />
@@ -21,7 +19,6 @@ const GridView = ({
   column,
   responsive,
   itemPadding,
-  // animation,
   renderRow,
   onEndReached,
   data,
@@ -32,7 +29,7 @@ const GridView = ({
 }) => {
   const theme = useTheme()
   const width = useWidth()
-  // let width = 'xs'
+
   const borderStyle = {
     border: `1px solid ${theme.palette.divider}`,
     backgroundColor: theme.palette.background.paper,
@@ -75,7 +72,6 @@ const GridView = ({
   if (border) {
     style = { ...style, ...borderStyle }
   }
-  // useBottomScrollListener(onEndReached, 200);
   return (
     <Box
       sx={{
