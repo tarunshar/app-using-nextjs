@@ -5,7 +5,6 @@ import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
 import { green, grey } from "@mui/material/colors";
-import { getStringFromHtml } from "./string";
 
 const settings = {
   dots: true,
@@ -149,7 +148,7 @@ const ListItem = (props) => {
               whiteSpace: "nowrap",
             }}
           >
-            {getStringFromHtml(item.job_des) || "no content"}
+            {item.job_des || "no content"}
           </Box>
 
           <Box

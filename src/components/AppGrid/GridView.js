@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Box, useTheme } from "@mui/material";
-import { useWidth } from "./width";
+// import { useWidth } from "./width";
 
 const getEmptyContainer = (ListEmptyComponent) => {
   if (ListEmptyComponent)
@@ -37,7 +37,8 @@ const GridView = ({
   ListEmptyComponent,
 }) => {
   const theme = useTheme();
-  const width = useWidth();
+  // const width = useWidth();
+  let width = "";
 
   const borderStyle = {
     border: `1px solid ${theme.palette.divider}`,
